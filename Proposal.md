@@ -27,7 +27,7 @@ There have been many other games like this, where someone takes Rock, Paper, Sci
 - By Friday, we will completed our program's code and will set up a step by step process to showing how the code runs.  
 
 ## Students:
-- Seth
+- Seth Hogue
 - Jeremiah Tatum
 
 ## GitHub Repository
