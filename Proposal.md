@@ -22,13 +22,11 @@ There have been many other games like this, where someone takes Rock, Paper, Sci
 ## Day to Day Goals:
 - By Monday, we will have the concept of our idea for our unit project.
 
-- By Tuesday, Our first goal is to brainstorm how we want to set up the program by applying a list of the types. The most efficient way to find out what type beats what type. We will at least show the different choices and matchups of the types to the user, and have the user choose from the list of types shown. We will working on functions for the user inputs and seeing if the choice is valid toward our concept. Also, include these functions into loops that we will start working on Wednesday.
+- By Tuesday, Our first goal is to brainstorm how to evaluate which side wins the match (i.e the most efficient way to find out what type beats what type). We will at least show the different choices and matchups of the types to the user, and have the user choose a type from the list of types shown. We will be able to see if the user's choice is valid or not, and create a loop that asks the user for their choice again until they choose a valid type.
 
-- By Wednesday, we will have loops for the functions that we created on Tuesday. If we are done with the basic concept by the first half of Wednesday, we will start working on expanding the list of types. 
+- By Wednesday, we should have a decent start of the combat portion of the program. Our AI should be able to randomly choose a type and the program will compare the two types to see which one wins the battle.
 
-- By Thursday, we will start working with the multiple types and how they are used against other types and cleaning up to be ready to present on Friday.
-
-- By Friday, we will completed our program's code and will set up a step by step process to showing how the code runs.  
+- By Thursday, we should have the program finished for the most part, and make sure that our program loops until the user types "quit". If we are ahead of schedule, we will attempt to integrate more type matchups into the program. At the end of the day, we should also have a plan of how we want to present it and a .README file ready.
 
 ## Students:
 - Seth Hogue
