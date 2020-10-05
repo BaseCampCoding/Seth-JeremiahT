@@ -25,3 +25,10 @@ There have been many other games like this, where someone takes Rock, Paper, Sci
 - By Wednesday, we will have loops for the functions that we created on Tuesday. If we are done with the basic concept by the first half of Wednesday, we will start working on expanding the list of types. 
 - By Thursday, we will start working with the multiple types and how they are used against other types and cleaning up to be ready to present on Friday.
 - By Friday, we will completed our program's code and will set up a step by step process to showing how the code runs.  
+
+## Students:
+- Seth
+- Jeremiah Tatum
+
+## GitHub Repository
+https://github.com/BaseCampCoding/Seth-JeremiahT
