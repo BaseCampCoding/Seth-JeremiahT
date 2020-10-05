@@ -20,8 +20,8 @@ There have been many other games like this, where someone takes Rock, Paper, Sci
   - This loop keeps going until the user types quit.
 
 ## Day to Day Goals:
--By Monday, we will have the concept of our idea for our unit project.
--By Tuesday, we will start by working on functions for the user inputs and seeing if the choice is valid toward our concept. Also, include these functions into loops that we will start working on Wednesday.
--By Wednesday, we will have loops for the functions that we created on Tuesday. If we are done with the basic concept by the first half of Wednesday, we will start working on expanding the list of types. 
--By Thursday, we will start working with the multiple types and how they are used against other types and cleaning up to be ready to present on Friday.
--By Friday, we will completed our program's code and will set up a step by step process to showing how the code runs.  
+- By Monday, we will have the concept of our idea for our unit project.
+- By Tuesday, we will start by working on functions for the user inputs and seeing if the choice is valid toward our concept. Also, include these functions into loops that we will start working on Wednesday.
+- By Wednesday, we will have loops for the functions that we created on Tuesday. If we are done with the basic concept by the first half of Wednesday, we will start working on expanding the list of types. 
+- By Thursday, we will start working with the multiple types and how they are used against other types and cleaning up to be ready to present on Friday.
+- By Friday, we will completed our program's code and will set up a step by step process to showing how the code runs.  
