@@ -34,14 +34,6 @@ def userSettings(): # Function to determine the player's type choice.
 
 def comSettings(): # Function to determine the computer's type choice.
     comChoice = random.choice(choices)
-    if comChoice == 'Fire':
-        comChoice = "Fire"
-    elif comChoice == 'Water':
-        comChoice = "Water"
-    elif comChoice == 'Grass':
-        comChoice = "Grass"
-    elif comChoice == 'Electric':
-        comChoice = "Electric"
     return comChoice
 
 print("Here are your choices: ") # Lists the options available to the user.
