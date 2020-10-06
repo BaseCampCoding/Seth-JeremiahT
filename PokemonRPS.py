@@ -111,6 +111,7 @@ while True: # Main portion of RPS game
             playerWins+=1
         elif comChoice == 'Water':
             print("The computer choose water! You win!")
+            playerWins+=1
 
     # Displays the amount of wins for the player and computer.
     print("")
