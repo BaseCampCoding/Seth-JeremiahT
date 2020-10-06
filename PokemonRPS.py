@@ -2,27 +2,27 @@ import random
 from colorama import Fore
 from colorama import Style
 
-choices = ["Fire", "Water", "Grass", "Electric"]
+choices = ['Fire', 'Ice', 'Grass', 'Ground','Rock']
 fireOptions = ['Fire', 'fire', 'F', 'f']
-waterOptions = ['Water', 'water', 'W', 'w']
+iceOptions = ['Ice', 'ice', 'I', 'i']
 grassOptions = ['Grass', 'grass', 'G', 'g']
-electricOptions = ['Electric', 'electric', 'E', 'e']
+groundOptions = ['Ground','ground','GR','gr']
+rockOptions = ['Rock', 'rock','R','r']
 yesOptions = ['Yes', 'yes', 'Y', 'y']
-colors = [Fore.RED, Fore.BLUE, Fore.GREEN, Fore.YELLOW]
+colors = [Fore.RED, Fore.BLUE, Fore.GREEN, Fore.LIGHTCYAN_EX, Fore.LIGHTMAGENTA_EX]
 playerWins = 0
 comWins = 0
 roundNum = 1
 def validType(choice: str) -> bool: # Checks if the user's choice is valid.
     ''' Returns True if type is in the choices list. Returns False otherwise.
-
     >>> validType("Fire")
     True
     >>> validType("Grass")
     True
-    >>> validType("Rock")
+    >>> validType("Electric")
     False
     '''
-    return choice in fireOptions or choice in waterOptions or choice in grassOptions or choice in electricOptions
+    return choice in fireOptions or choice in iceOptions or choice in grassOptions or choice in groundOptions or choice in rockOptions
 
 def userSettings(): # Function to determine the player's type choice.
     playerChoice = ''
@@ -41,7 +41,7 @@ count = 0
 for item in choices:
     print(f"{colors[count]}{item}{Style.RESET_ALL}")
     count += 1
-print("\nRemember, fire beats grass, grass beats water and electric, water beats fire, and electric beats fire and water!\n")
+print("\nRemember, fire beats grass and ice, ice beats grass and ground, grass beats fire and rock , and rock beats fire and ice \n")
 
 while True: # Main portion of RPS game
     print("")
@@ -53,30 +53,36 @@ while True: # Main portion of RPS game
     if userChoice in fireOptions:
         if comChoice == 'Fire':
             print("You both chose fire! It's a tie!")
-            playerWins += 0
-        elif comChoice == 'Water':
-            print("The computer chose water! You lose!")
-            comWins += 1
+            playerWins +=0
+        elif comChoice == 'Ice':
+            print("The computer chose ice! You win!")
+            playerWins +=1
         elif comChoice == 'Grass':
             print("The computer choose grass! You win!")
-            playerWins += 1
-        elif comChoice == 'Electric':
-            print("The computer choose electric! You lose!")
+            playerWins +=1
+        elif comChoice == 'Ground':
+            print("The computer choose ground ! You lose!")
+            comWins+=1
+        elif comChoice == 'Rock':
+            print("The computer choose rock! You lose!")
             comWins+=1
 
-    elif userChoice in waterOptions:
-        if comChoice == 'Water':
-            print("You both chose water! It's a tie!")
+    elif userChoice in iceOptions:
+        if comChoice == 'Ice':
+            print("You both chose ice! It's a tie!")
             playerWins += 0
         elif comChoice == 'Grass':
             print("The computer chose grass! You lose!")
             comWins += 1
         elif comChoice == 'Fire':
-            print("The computer choose fire! You win!")
-            playerWins += 1
-        elif comChoice == 'Electric':
-            print("The computer choose electric! You lose!")
-            comWins+=1
+            print("The computer choose fire! You lose!")
+            comWins += 1
+        elif comChoice == 'Ground':
+            print("The computer choose ground ! You win!")
+            playerWins+=1
+        elif comChoice == 'Rock':
+            print("The computer choose rock! You win!")
+            playerWins+=1
 
     elif userChoice in grassOptions:
         if comChoice == 'Grass':
@@ -85,15 +91,19 @@ while True: # Main portion of RPS game
         elif comChoice == 'Fire':
             print("The computer chose fire! You lose!")
             comWins += 1
-        elif comChoice == 'Water':
-            print("The computer choose water! You win!")
-            playerWins += 1
-        elif comChoice == 'Electric':
-            print("The computer choose electric! You win!")
+        elif comChoice == 'Ice':
+            print("The computer choose ice! You lose!")
+            comWins += 1
+        elif comChoice == 'Ground':
+            print("The computer choose ground ! You win!")
             playerWins+=1
-    elif userChoice in electricOptions:
-        if comChoice == 'Electric':
-            print("The computer choose electric! It's a tie!")
+        elif comChoice == 'Rock':
+            print("The computer choose rock! You win!")
+            playerWins+=1
+
+    elif userChoice in groundOptions:
+        if comChoice == 'Ground':
+            print("The computer choose ground! It's a tie!")
             playerWins +=0
         elif comChoice == 'Grass':
             print("The computer choose grass! You lose!")
@@ -101,9 +111,29 @@ while True: # Main portion of RPS game
         elif comChoice == 'Fire':
             print("The computer choose fire! You win!")
             playerWins+=1
-        elif comChoice == 'Water':
-            print("The computer choose water! You win!")
+        elif comChoice == 'Ice':
+            print("The computer choose ice! You lose!")
+            comWins+=1
+        elif comChoice == 'Rock':
+            print("The computer choose rock! You win!")
             playerWins+=1
+
+    elif userChoice in rockOptions:
+        if comChoice == 'Rock':
+            print("The computer choose rock! It's a tie!")
+            playerWins+=0
+        elif comChoice == 'Fire':
+            print("The computer choose fire! You win!")
+            playerWins+=1
+        elif comChoice == 'Ice':
+            print("The computer choose ice! You win!")
+            playerWins+=1
+        elif comChoice == 'Ground':
+            print("The computer choose ground! You lose!")
+            comWins+=1
+        elif comChoice == 'Grass':
+            print("The computer choose grass! You lose!")
+            comWins+=1
 
     # Displays the amount of wins for the player and computer.
     print("")
