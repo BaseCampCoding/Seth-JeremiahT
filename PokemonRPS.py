@@ -44,6 +44,7 @@ count = 0
 for item in choices:
     print(f"{colors[count]}{item}{Style.RESET_ALL}")
     count += 1
+# Prints the type matchups with matching colors.
 print(f'''\nRemember:
 {Fore.RED}Fire{Style.RESET_ALL} beats {Fore.GREEN}grass{Style.RESET_ALL} and {Fore.BLUE}ice {Style.RESET_ALL}
 {Fore.GREEN}Grass{Style.RESET_ALL} beats {Fore.YELLOW}rock{Style.RESET_ALL} and {Fore.LIGHTYELLOW_EX}ground
