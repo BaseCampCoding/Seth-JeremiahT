@@ -128,7 +128,7 @@ while True: # Main portion of RPS game
             playerWins += 1
 
     elif userChoice in groundOptions:
-        if comChoice == 'ground':
+        if comChoice == 'Ground':
             print(f"You both chose {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}! It's a tie!")
             playerWins += 0
         elif comChoice == 'Grass':
@@ -150,7 +150,7 @@ while True: # Main portion of RPS game
     print("")
 
     # Asks the user if they want to play again, if 'y', the game loops back. Otherwise, the program ends.
-    playAgain = input("Do you want to play again? [Y/N]")
+    playAgain = input("Do you want to play again? [Y/N]: ")
     if playAgain in yesOptions:
         roundNum += 1
         print(f"Round {roundNum}")
