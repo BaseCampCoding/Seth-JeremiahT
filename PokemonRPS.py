@@ -18,7 +18,7 @@ def validType(choice: str) -> bool: # Checks if the user's choice is valid.
     True
     >>> validType("Grass")
     True
-    >>> validType("Rock")
+    >>> validType("Electric")
     False
     '''
     for item in zippedOptions:
