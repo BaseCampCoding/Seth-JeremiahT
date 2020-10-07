@@ -37,25 +37,32 @@ def comSettings(): # Function to determine the computer's type choice.
     comChoice = random.choice(choices)
     return comChoice
 
-# Placeholder variables until health mechanism is finished.
-def playerDamage():
+def playerDamage(): # Shows the damage given if the player wins, with the chance of missing.
     playerDamage = 20
     missAttack = random.randint(1, 5)
     if missAttack == 1:
         playerDamage = 0
         print("\nYour attack missed!")
+    critAttack = random.randint(1, 5)
+    if playerDamage != 0 and critAttack == 1:
+        playerDamage *= 2
+        print("You got a critical hit!")
     return playerDamage
 
-def comDamage():
+def comDamage(): # Shows the damage given if the computer wins, with the chance of missing.
     comDamage = 20
     missAttack = random.randint(1, 5)
     if missAttack == 1:
         comDamage = 0
         print("\nThe computer's attack missed!")
+    critAttack = random.randint(1, 5)
+    if comDamage != 0 and critAttack == 1:
+        comDamage *= 2
+        print("The computer got a critical hit!")
     return comDamage
 
    
-def main():
+def main(): # Main function of RPS game
     playerHealth = 100
     comHealth = 100
     print("Here are your choices: ") # Lists the options available to the user.
@@ -70,13 +77,14 @@ def main():
     {Fore.YELLOW}Rock{Style.RESET_ALL} beats {Fore.RED}fire{Style.RESET_ALL} and {Fore.BLUE}ice{Style.RESET_ALL}
     {Fore.BLUE}Ice{Style.RESET_ALL} beats {Fore.GREEN}grass{Style.RESET_ALL} and {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}
     {Fore.LIGHTYELLOW_EX}Ground{Style.RESET_ALL} beats {Fore.RED}fire{Style.RESET_ALL} and {Fore.YELLOW}rock{Style.RESET_ALL}!''')
-    while playerHealth > 0 and comHealth > 0: # Main portion of RPS game
+    
+    while playerHealth > 0 and comHealth > 0:
         print("")
         userChoice = userSettings() # Runs the previously defined function
         comChoice = comSettings() # Runs the previously defined function
         print("")
 
-        # If statements to determine the winner of the match, adds the result to score.
+        # If statements to determine the winner of the match, subtracts health from losers total health.
         if userChoice in fireOptions:
             if comChoice == 'Fire':
                 print(f"You both chose {Fore.RED}fire{Style.RESET_ALL}! It's a tie!")
@@ -166,16 +174,17 @@ def main():
             elif comChoice == 'Rock':
                 print(f"The computer chose {Fore.YELLOW}rock{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
-        # Displays the amount of wins for the player and computer.
+
+        # Displays the amount of health that the player and computer have left.
         print("")
         print(f"Player health: {playerHealth}")
         print(f"Computer health: {comHealth}")
         print("")
 
-        if playerHealth == 0:
-            print("You were defeated by the computer!")
-        elif comHealth == 0:
-            print("You defeated the computer!")
+        if playerHealth <= 0:
+            print("You were defeated by the computer!\n")
+        elif comHealth <= 0:
+            print("You defeated the computer!\n")
 
 main()
 
@@ -187,5 +196,5 @@ while True:
         print(f"Round {roundNum}")
         main()
     else:
-        print("I hope you had fun!")
+        print("\nI hope you had fun!")
         break
