@@ -16,7 +16,7 @@ class menu: #Puts all functions under the same class.
     def __init__(self):
         self.game = tk.Tk()
         self.game.geometry("600x520")
-        self.game.title("Rock Paper Scissors Game")
+        self.game.title("TKPokemonRPS")
         button1 = tk.Button(text=" Fire ",bg="red", height=2, width=20, command=self.fire)
         button1.grid(column=0,row=1)
         button2 = tk.Button(text=" Grass ",bg="green", height=2, width=20, command=self.grass)

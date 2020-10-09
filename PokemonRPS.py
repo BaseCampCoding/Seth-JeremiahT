@@ -93,15 +93,19 @@ def main(): # Main function of RPS game
             elif comChoice == 'Ground':
                 print(f"The computer chose {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Rock':
                 print(f"The computer chose {Fore.YELLOW}rock{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Grass':
                 print(f"The computer chose {Fore.GREEN}grass{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
             elif comChoice == 'Ice':
                 print(f"The computer chose {Fore.BLUE}ice{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
 
         elif userChoice in grassOptions:
             if comChoice == 'Grass':
@@ -111,15 +115,19 @@ def main(): # Main function of RPS game
             elif comChoice == 'Fire':
                 print(f"The computer chose {Fore.RED}fire{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Ice':
                 print(f"The computer chose {Fore.BLUE}ice{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Rock':
                 print(f"The computer chose {Fore.YELLOW}rock{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
             elif comChoice == 'Ground':
                 print(f"The computer chose {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
         
         elif userChoice in rockOptions:
             if comChoice == 'Rock':
@@ -129,15 +137,19 @@ def main(): # Main function of RPS game
             elif comChoice == 'Grass':
                 print(f"The computer chose {Fore.GREEN}grass{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == "Ground":
                 print(f"The computer chose {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Fire':
                 print(f"The computer chose {Fore.RED}fire{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
             elif comChoice == 'Ice':
                 print(f"The computer chose {Fore.BLUE}ice{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
 
         elif userChoice in iceOptions:
             if comChoice == 'Ice':
@@ -147,15 +159,19 @@ def main(): # Main function of RPS game
             elif comChoice == 'Fire':
                 print(f"The computer chose {Fore.RED}fire{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Rock':
                 print(f"The computer chose {Fore.YELLOW}rock{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Grass':
                 print(f"The computer chose {Fore.GREEN}grass{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
             elif comChoice == 'Ground':
                 print(f"The computer chose {Fore.LIGHTYELLOW_EX}ground{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
 
         elif userChoice in groundOptions:
             if comChoice == 'Ground':
@@ -165,15 +181,19 @@ def main(): # Main function of RPS game
             elif comChoice == 'Grass':
                 print(f"The computer chose {Fore.GREEN}grass{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Ice':
                 print(f"The computer chose {Fore.BLUE}ice{Style.RESET_ALL}! You lose!")
                 playerHealth -= comDamage()
+                playerHealth = max(playerHealth, 0)
             elif comChoice == 'Fire':
                 print(f"The computer chose {Fore.RED}fire{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
             elif comChoice == 'Rock':
                 print(f"The computer chose {Fore.YELLOW}rock{Style.RESET_ALL}! You win!")
                 comHealth -= playerDamage()
+                comHealth = max(comHealth, 0)
 
         # Displays the amount of health that the player and computer have left.
         print("")
