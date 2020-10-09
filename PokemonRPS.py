@@ -39,11 +39,11 @@ def comSettings(): # Function to determine the computer's type choice.
 
 def playerDamage(): # Shows the damage given if the player wins, with the chance of missing.
     playerDamage = 20
-    missAttack = random.randint(1, 5)
+    missAttack = random.randint(1, 8)
     if missAttack == 1:
         playerDamage = 0
         print("\nYour attack missed!")
-    critAttack = random.randint(1, 5)
+    critAttack = random.randint(1, 8)
     if playerDamage != 0 and critAttack == 1:
         playerDamage *= 2
         print("You got a critical hit!")
@@ -51,11 +51,11 @@ def playerDamage(): # Shows the damage given if the player wins, with the chance
 
 def comDamage(): # Shows the damage given if the computer wins, with the chance of missing.
     comDamage = 20
-    missAttack = random.randint(1, 5)
+    missAttack = random.randint(1, 8)
     if missAttack == 1:
         comDamage = 0
         print("\nThe computer's attack missed!")
-    critAttack = random.randint(1, 5)
+    critAttack = random.randint(1, 8)
     if comDamage != 0 and critAttack == 1:
         comDamage *= 2
         print("The computer got a critical hit!")
