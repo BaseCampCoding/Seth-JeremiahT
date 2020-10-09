@@ -1,17 +1,7 @@
 import random
 import tkinter as tk 
-from colorama import Fore
-from colorama import Style
 
 choices = ("Fire", "Grass", "Rock", "Ice", "Ground")
-fireOptions = ('Fire', 'fire', 'F', 'f')
-grassOptions = ('Grass', 'grass', 'Gra', 'gra')
-rockOptions = ('Rock', 'rock', 'R', 'r')
-iceOptions = ('Ice', 'ice', 'I', 'i')
-groundOptions = ('Ground', 'ground', 'Gro', 'gro')
-yesOptions = ('Yes', 'yes', 'Y', 'y')
-zippedOptions = list(zip(fireOptions, grassOptions, rockOptions, iceOptions, groundOptions))
-colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.LIGHTBLUE_EX, Fore.LIGHTYELLOW_EX]
 playerHealth = 100
 comHealth = 100
 winner = ''
@@ -22,7 +12,7 @@ comMiss = ''
 comGameWinner = ''
 playerGameWinner = ''
 
-class menu:
+class menu: #Puts all functions under the same class.
     def __init__(self):
         self.game = tk.Tk()
         self.game.geometry("600x520")
@@ -59,7 +49,7 @@ class menu:
             playerCrit = 'You got a critical hit!'
         return playerDamage
 
-    def resetGame(self):
+    def resetGame(self): # Function to reset the game.
         global playerHealth
         global comHealth
         self.game.destroy()
@@ -83,10 +73,10 @@ class menu:
             comCrit = 'The computer got a critical hit!'
         return comDamage
 
-    def random_computer_choice(self):
+    def random_computer_choice(self): # Computer randomly chooses a type.
         return random.choice(choices) 
 
-    def result(self, human_choice,com_choice):
+    def result(self, human_choice,com_choice): # Determines the winner of the fight.
         global userChoice
         global userChoice
         global playerHealth
@@ -99,94 +89,114 @@ class menu:
         global playerGameWinner
         global comGameWinner
         if playerHealth > 0 and comHealth > 0:
-            if userChoice in fireOptions:
+            if userChoice == "Fire":
                     if comChoice == 'Fire':
                         playerHealth -= 0
                         comHealth -= 0
                         winner = 'It was a tie!'
                     elif comChoice == 'Ground':
                         playerHealth -= self.comDamage()
+                        playerHealth = max(playerHealth, 0)
                         winner = 'Computer'
                     elif comChoice == 'Rock':
                         playerHealth -= self.comDamage()
+                        playerHealth = max(playerHealth, 0)
                         winner = 'Computer'
                     elif comChoice == 'Grass':
                         comHealth -= self.playerDamage()
+                        comHealth = max(comHealth, 0)
                         winner = 'You'
                     elif comChoice == 'Ice':
                         comHealth -= self.playerDamage()
+                        comHealth = max(comHealth, 0)
                         winner = 'You'
 
-            elif userChoice in grassOptions:
+            elif userChoice == "Grass":
                 if comChoice == 'Grass':
                     playerHealth -= 0
                     comHealth -= 0
                     winner = 'It was a tie!'
                 elif comChoice == 'Fire':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Ice':
                     playerHealth -= self.comDamage()
+                    max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Rock':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
                 elif comChoice == 'Ground':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
             
-            elif userChoice in rockOptions:
+            elif userChoice == "Rock":
                 if comChoice == 'Rock':
                     playerHealth -= 0
                     comHealth -= 0
                     winner = 'It was a tie!'
                 elif comChoice == 'Grass':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == "Ground":
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Fire':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
                 elif comChoice == 'Ice':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
 
-            elif userChoice in iceOptions:
+            elif userChoice == "Ice":
                 if comChoice == 'Ice':
                     playerHealth -= 0
                     comHealth -= 0
                     winner = 'It was a tie!'
                 elif comChoice == 'Fire':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Rock':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Grass':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
                 elif comChoice == 'Ground':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
 
-            elif userChoice in groundOptions:
+            elif userChoice == "Ground":
                 if comChoice == 'Ground':
                     playerHealth -= 0
                     comHealth -= 0
                     winner = 'It was a tie!'
                 elif comChoice == 'Grass':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Ice':
                     playerHealth -= self.comDamage()
+                    playerHealth = max(playerHealth, 0)
                     winner = 'Computer'
                 elif comChoice == 'Fire':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
                 elif comChoice == 'Rock':
                     comHealth -= self.playerDamage()
+                    comHealth = max(comHealth, 0)
                     winner = 'You'
             text_area = tk.Text(master=self.game,height=12,width=60,bg="#FFFF99")
             text_area.grid(column=0,row=6)
@@ -215,38 +225,38 @@ class menu:
             comGameWinner = ''
         
 
-    def fire(self):
+    def fire(self): #
         global userChoice
         global comChoice
-        userChoice ='fire'
+        userChoice ='Fire'
         comChoice = self.random_computer_choice()
         self.result(userChoice ,comChoice)
 
     def grass(self):
         global userChoice
         global comChoice
-        userChoice='grass'
+        userChoice='Grass'
         comChoice=self.random_computer_choice()
         self.result(userChoice,comChoice)
 
     def ice(self):
         global userChoice
         global comChoice
-        userChoice='ice'
+        userChoice='Ice'
         comChoice=self.random_computer_choice() 
         self.result(userChoice,comChoice)
 
     def rock(self):
         global userChoice
         global comChoice
-        userChoice= 'rock'
+        userChoice= 'Rock'
         comChoice=self.random_computer_choice() 
         self.result(userChoice,comChoice)
 
     def ground(self):
         global userChoice
         global comChoice
-        userChoice='ground'
+        userChoice='Ground'
         comChoice=self.random_computer_choice() 
         self.result(userChoice,comChoice) 
 
